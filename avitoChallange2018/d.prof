@@ -1,0 +1,36 @@
+	Mon May 28 13:46 2018 Time and Allocation Profiling Report  (Final)
+
+	   d +RTS -p -RTS
+
+	total time  =        0.12 secs   (124 ticks @ 1000 us, 1 processor)
+	total alloc = 172,159,320 bytes  (excludes profiling overheads)
+
+COST CENTRE           MODULE    SRC                 %time %alloc
+maxAnd                Main      d.hs:(7,1)-(16,37)   67.7   80.1
+maxAnd.changeShelf    Main      d.hs:15:9-69         15.3   18.1
+maxAnd.updatedShelf   Main      d.hs:13:9-43          9.7    1.7
+maxAnd.value          Main      d.hs:12:9-34          3.2    0.0
+maxAnd.remaining      Main      d.hs:12:9-34          2.4    0.0
+maxAnd.placeOnCurrent Main      d.hs:14:9-60          1.6    0.0
+
+
+                                                                                      individual      inherited
+COST CENTRE              MODULE                SRC                 no.     entries  %time %alloc   %time %alloc
+
+MAIN                     MAIN                  <built-in>          117          0    0.0    0.0   100.0  100.0
+ CAF                     Main                  <entire-module>     233          0    0.0    0.0     0.0    0.0
+  main                   Main                  d.hs:(19,1)-(22,49) 234          1    0.0    0.0     0.0    0.0
+ CAF                     GHC.Conc.Signal       <entire-module>     211          0    0.0    0.0     0.0    0.0
+ CAF                     GHC.IO.Encoding       <entire-module>     194          0    0.0    0.0     0.0    0.0
+ CAF                     GHC.IO.Encoding.Iconv <entire-module>     192          0    0.0    0.0     0.0    0.0
+ CAF                     GHC.IO.Handle.FD      <entire-module>     183          0    0.0    0.0     0.0    0.0
+ CAF                     GHC.IO.Handle.Text    <entire-module>     181          0    0.0    0.0     0.0    0.0
+ CAF                     Text.Read.Lex         <entire-module>     147          0    0.0    0.0     0.0    0.0
+ main                    Main                  d.hs:(19,1)-(22,49) 235          0    0.0    0.1   100.0  100.0
+  maxAnd                 Main                  d.hs:(7,1)-(16,37)  236     705431   67.7   80.1   100.0   99.9
+   maxAnd.(...)          Main                  d.hs:12:9-34        239     352715    0.0    0.0     0.0    0.0
+   maxAnd.changeShelf    Main                  d.hs:15:9-69        240     352715   15.3   18.1    15.3   18.1
+   maxAnd.placeOnCurrent Main                  d.hs:14:9-60        237     352715    1.6    0.0     1.6    0.0
+   maxAnd.remaining      Main                  d.hs:12:9-34        238     352715    2.4    0.0     2.4    0.0
+   maxAnd.updatedShelf   Main                  d.hs:13:9-43        241     352715    9.7    1.7     9.7    1.7
+   maxAnd.value          Main                  d.hs:12:9-34        242     352715    3.2    0.0     3.2    0.0

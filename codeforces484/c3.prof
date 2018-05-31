@@ -1,0 +1,84 @@
+	Fri May 25 12:55 2018 Time and Allocation Profiling Report  (Final)
+
+	   c3 +RTS -p -RTS
+
+	total time  =        0.56 secs   (564 ticks @ 1000 us, 1 processor)
+	total alloc = 1,204,892,088 bytes  (excludes profiling overheads)
+
+COST CENTRE                           MODULE    SRC                    %time %alloc
+
+getTree.\                             Main      c3.hs:(34,30)-(38,56)   21.1   22.0
+weights.update                        Main      c3.hs:(50,7)-(58,27)    20.0   20.9
+countRemovedEdges.remove.\            Main      c3.hs:(79,63)-(81,71)   13.5   10.5
+weights.update.\                      Main      c3.hs:(52,40)-(54,53)   11.9   12.1
+countRemovedEdges.remove.\            Main      c3.hs:(70,38)-(71,54)   11.9   10.6
+countRemovedEdges.remove              Main      c3.hs:(68,5)-(82,42)     6.0    7.9
+getTree                               Main      c3.hs:(21,1)-(39,15)     3.2    3.2
+countRemovedEdges.remove.edgesRemoved Main      c3.hs:76:11-59           1.6    0.5
+weights.update.branchWeight           Main      c3.hs:56:13-54           1.4    0.6
+countRemovedEdges.remove.overflows.\  Main      c3.hs:73:24-57           1.4    0.7
+getTree.edgesBS                       Main      c3.hs:27:7-105           1.2    1.7
+getTree.edgesBS.(...)                 Main      c3.hs:27:76-104          1.2    2.7
+getTree.edges                         Main      c3.hs:(28,7)-(31,43)     1.1    1.3
+countRemovedEdges.remove.overflows    Main      c3.hs:(72,11)-(74,20)    1.1    1.3
+
+
+                                                                                                                 individual      inherited
+COST CENTRE                                     MODULE                  SRC                   no.     entries  %time %alloc   %time %alloc
+
+MAIN                                            MAIN                    <built-in>            139          0    0.0    0.0   100.0  100.0
+ CAF                                            Main                    <entire-module>       277          0    0.0    0.0     0.0    0.0
+  getTree                                       Main                    c3.hs:(21,1)-(39,15)  280          1    0.0    0.0     0.0    0.0
+  main                                          Main                    c3.hs:(85,1)-(89,26)  278          1    0.0    0.0     0.0    0.0
+ CAF                                            Debug.Trace             <entire-module>       247          0    0.0    0.0     0.0    0.0
+ CAF                                            GHC.Conc.Signal         <entire-module>       235          0    0.0    0.0     0.0    0.0
+ CAF                                            GHC.IO.Encoding         <entire-module>       218          0    0.0    0.0     0.0    0.0
+ CAF                                            GHC.IO.Encoding.Iconv   <entire-module>       216          0    0.0    0.0     0.0    0.0
+ CAF                                            GHC.IO.Handle.FD        <entire-module>       207          0    0.0    0.0     0.0    0.0
+ CAF                                            GHC.IO.Handle.Internals <entire-module>       206          0    0.0    0.0     0.0    0.0
+ CAF                                            GHC.IO.Handle.Text      <entire-module>       205          0    0.0    0.0     0.0    0.0
+ CAF                                            Text.Read.Lex           <entire-module>       170          0    0.0    0.0     0.0    0.0
+ main                                           Main                    c3.hs:(85,1)-(89,26)  279          0    0.0    0.0   100.0  100.0
+  countRemovedEdges                             Main                    c3.hs:(61,1)-(82,42)  282          1    0.0    0.1    36.5   33.1
+   countRemovedEdges.remove                     Main                    c3.hs:(68,5)-(82,42)  299     100000    6.0    7.9    36.5   33.1
+    countRemovedEdges.remove.\                  Main                    c3.hs:(70,38)-(71,54) 300     199998    3.5    5.7     3.5    5.7
+     countRemovedEdges.remove.\.\               Main                    c3.hs:71:40-53        301          1    0.0    0.0     0.0    0.0
+    countRemovedEdges.remove.\                  Main                    c3.hs:(79,63)-(81,71) 315      99999   13.5   10.5    27.0   19.5
+     countRemovedEdges.remove.edgesRemoved      Main                    c3.hs:76:11-59        323      99999    1.6    0.5     1.6    0.5
+     countRemovedEdges.remove.overflows         Main                    c3.hs:(72,11)-(74,20) 319      99999    1.1    1.3     2.5    2.1
+      countRemovedEdges.remove.overflows.\      Main                    c3.hs:73:24-57        320      99998    1.4    0.7     1.4    0.7
+     countRemovedEdges.remove.totalOverflows    Main                    c3.hs:75:11-82        318      99999    0.7    0.5     0.7    0.6
+      countRemovedEdges.remove.totalOverflows.\ Main                    c3.hs:75:56-69        321      99998    0.0    0.1     0.0    0.1
+     countRemovedEdges.remove.\                 Main                    c3.hs:(70,38)-(71,54) 316          0    8.3    4.9     8.7    5.8
+      countRemovedEdges.remove.\.\              Main                    c3.hs:71:40-53        317     199997    0.4    0.9     0.4    0.9
+    countRemovedEdges.remove.edgesRemoved       Main                    c3.hs:76:11-59        322          1    0.0    0.0     0.0    0.0
+    countRemovedEdges.remove.overflows          Main                    c3.hs:(72,11)-(74,20) 303          1    0.0    0.0     0.0    0.0
+     countRemovedEdges.remove.overflows.\       Main                    c3.hs:73:24-57        304          1    0.0    0.0     0.0    0.0
+    countRemovedEdges.remove.totalOverflows     Main                    c3.hs:75:11-82        302          1    0.0    0.0     0.0    0.0
+     countRemovedEdges.remove.totalOverflows.\  Main                    c3.hs:75:56-69        305          1    0.0    0.0     0.0    0.0
+   countRemovedEdges.(...)                      Main                    c3.hs:62:7-31         285          1    0.0    0.0     0.0    0.0
+   countRemovedEdges.end                        Main                    c3.hs:62:7-31         284          1    0.0    0.0     0.0    0.0
+   countRemovedEdges.start                      Main                    c3.hs:62:7-31         298          1    0.0    0.0     0.0    0.0
+   countRemovedEdges.verticeCount               Main                    c3.hs:63:7-36         283          1    0.0    0.0     0.0    0.0
+  weights                                       Main                    c3.hs:(42,1)-(58,27)  306          1    0.0    0.1    33.5   33.7
+   weights.update                               Main                    c3.hs:(50,7)-(58,27)  311     100000   20.0   20.9    33.5   33.6
+    weights.update.\                            Main                    c3.hs:(52,40)-(54,53) 312     199998   11.9   12.1    11.9   12.1
+    weights.update.\                            Main                    c3.hs:55:44-68        313      99999    0.2    0.0     0.2    0.0
+    weights.update.branchWeight                 Main                    c3.hs:56:13-54        314      99999    1.4    0.6     1.4    0.6
+   weights.(...)                                Main                    c3.hs:43:7-31         309          1    0.0    0.0     0.0    0.0
+   weights.end                                  Main                    c3.hs:43:7-31         308          1    0.0    0.0     0.0    0.0
+   weights.start                                Main                    c3.hs:43:7-31         310          1    0.0    0.0     0.0    0.0
+   weights.verticeCount                         Main                    c3.hs:44:7-36         307          1    0.0    0.0     0.0    0.0
+  getTree                                       Main                    c3.hs:(21,1)-(39,15)  281          0    3.2    3.2    30.0   33.2
+   getTree.\                                    Main                    c3.hs:(34,30)-(38,56) 290      99999   21.1   22.0    21.1   22.0
+   getTree.edges                                Main                    c3.hs:(28,7)-(31,43)  287          1    1.1    1.3     3.2    3.6
+    getTree.edges.\                             Main                    c3.hs:(28,32)-(31,34) 289      99999    0.9    0.7     2.1    2.3
+     getTree.edges.\.(...)                      Main                    c3.hs:30:23-50        296      99999    0.5    0.8     0.5    0.8
+     getTree.edges.\.(...)                      Main                    c3.hs:29:23-50        292      99999    0.4    0.8     0.4    0.8
+     getTree.edges.\.v1'                        Main                    c3.hs:29:23-50        291      99999    0.0    0.0     0.0    0.0
+     getTree.edges.\.v2'                        Main                    c3.hs:30:23-50        295      99999    0.4    0.0     0.4    0.0
+   getTree.edgesBS                              Main                    c3.hs:27:7-105        288          1    1.2    1.7     2.5    4.4
+    getTree.edgesBS.(...)                       Main                    c3.hs:27:76-104       294      99999    1.2    2.7     1.2    2.7
+    getTree.edgesBS.v1                          Main                    c3.hs:27:76-104       293      99999    0.0    0.0     0.0    0.0
+    getTree.edgesBS.v2                          Main                    c3.hs:27:76-104       297      99999    0.0    0.0     0.0    0.0
+   getTree.verticeCount                         Main                    c3.hs:26:7-51         286          1    0.0    0.0     0.0    0.0

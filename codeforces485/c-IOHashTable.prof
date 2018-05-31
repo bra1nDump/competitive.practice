@@ -1,0 +1,179 @@
+	Wed May 30 12:33 2018 Time and Allocation Profiling Report  (Final)
+
+	   c-IOHashTable +RTS -p -RTS
+
+	total time  =        0.00 secs   (2 ticks @ 1000 us, 1 processor)
+	total alloc =   1,081,848 bytes  (excludes profiling overheads)
+
+COST CENTRE         MODULE                           SRC                                                                                %time %alloc
+
+insertRecord/probe  Data.HashTable.ST.Basic          src/Data/HashTable/ST/Basic.hs:(440,49)-(446,39)                                    50.0    0.0
+minCost.opt.fontJ   Main                             c-IOHashTable.hs:33:21-39                                                           50.0    1.7
+CAF                 GHC.IO.Handle.FD                 <entire-module>                                                                      0.0    4.8
+defaultHashWithSalt Data.Hashable.Class              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc18306_0/ghc_5.hscpp:1014:1-50    0.0    4.0
+primWordToElem      Data.HashTable.Internal.IntArray src/Data/HashTable/Internal/IntArray.hs:53:1-21                                      0.0    2.3
+readArray           Data.HashTable.Internal.IntArray src/Data/HashTable/Internal/IntArray.hs:(94,1)-(96,25)                               0.0   13.6
+newArray            Data.HashTable.Internal.Array    src/Data/HashTable/Internal/Array.hs:37:1-21                                         0.0    1.6
+readArray           Data.HashTable.Internal.Array    src/Data/HashTable/Internal/Array.hs:40:1-23                                         0.0    7.3
+writeArray          Data.HashTable.Internal.Array    src/Data/HashTable/Internal/Array.hs:43:1-25                                         0.0    4.8
+growTable/rehash    Data.HashTable.ST.Basic          src/Data/HashTable/ST/Basic.hs:(485,60)-(492,28)                                     0.0    5.6
+checkOverflow       Data.HashTable.ST.Basic          src/Data/HashTable/ST/Basic.hs:(453,1)-(468,20)                                      0.0    1.1
+rehashAll.rehash.go Data.HashTable.ST.Basic          src/Data/HashTable/ST/Basic.hs:(484,9)-(492,28)                                      0.0    1.1
+main                Main                             c-IOHashTable.hs:(51,1)-(58,12)                                                      0.0    1.3
+minCost.opt         Main                             c-IOHashTable.hs:(22,11)-(41,32)                                                     0.0   41.0
+minCost.customMin   Main                             c-IOHashTable.hs:(43,11)-(48,48)                                                     0.0    2.2
+
+
+                                                                                                                                                                         individual      inherited
+COST CENTRE                       MODULE                            SRC                                                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                              MAIN                              <built-in>                                                                        187          0    0.0    0.1   100.0  100.0
+ CAF                              Main                              <entire-module>                                                                   373          0    0.0    0.0     0.0    0.0
+  main                            Main                              c-IOHashTable.hs:(51,1)-(58,12)                                                   374          1    0.0    0.0     0.0    0.0
+ CAF                              Data.HashTable.ST.Basic           <entire-module>                                                                   371          0    0.0    0.0     0.0    0.0
+  deletedMarker                   Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:690:1-17                                           442          1    0.0    0.0     0.0    0.0
+  emptyMarker                     Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:685:1-15                                           418          1    0.0    0.0     0.0    0.0
+  intSz                           Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:130:1-40                                           407          1    0.0    0.0     0.0    0.0
+  maxLoad                         Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:680:1-14                                           389          1    0.0    0.0     0.0    0.0
+  mempty                          Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:515:5-26                                           440          1    0.0    0.0     0.0    0.0
+  newSizeRefs                     Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(145,1)-(149,12)                                   404          1    0.0    0.0     0.0    0.0
+   newSizeRefs.asz                Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:146:9-23                                           406          1    0.0    0.0     0.0    0.0
+  readDelLoad                     Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:139:1-36                                           451          1    0.0    0.0     0.0    0.0
+  readLoad                        Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:133:1-33                                           455          1    0.0    0.0     0.0    0.0
+  writeDelLoad                    Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:142:1-38                                           453          1    0.0    0.0     0.0    0.0
+  writeLoad                       Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:136:1-35                                           457          1    0.0    0.0     0.0    0.0
+ CAF                              Data.HashTable.Internal.Array     <entire-module>                                                                   370          0    0.0    0.0     0.0    0.0
+  newArray                        Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:37:1-21                                      402          1    0.0    0.0     0.0    0.0
+  readArray                       Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:40:1-23                                      492          1    0.0    0.0     0.0    0.0
+  writeArray                      Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:43:1-25                                      460          1    0.0    0.0     0.0    0.0
+ CAF                              Data.HashTable.Internal.IntArray  <entire-module>                                                                   369          0    0.0    0.0     0.0    0.0
+  cacheLineSize                   Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:80:1-18                                   401          1    0.0    0.0     0.0    0.0
+  elemMask                        Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:69:1-17                                   413          1    0.0    0.0     0.0    0.0
+  primWordToElem                  Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:53:1-21                                   415          1    0.0    0.0     0.0    0.0
+  wordSizeInBytes                 Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:74:1-49                                   400          1    0.0    0.0     0.0    0.0
+ CAF                              Data.HashTable.Internal.Utils     <entire-module>                                                                   367          0    0.0    0.0     0.0    0.7
+  cacheLineSize                   Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:48:1-18                                      397          1    0.0    0.0     0.0    0.0
+  numElemsInCacheLine             Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:(52,1)-(54,62)                               395          1    0.0    0.0     0.0    0.0
+   numElemsInCacheLine.z          Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:54:5-62                                      396          1    0.0    0.0     0.0    0.0
+  primeSizes                      Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:(114,1)-(234,40)                             381          1    0.0    0.7     0.0    0.7
+   marray#                        Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:162:25-31 386        122    0.0    0.0     0.0    0.0
+   unId                           Data.Vector.Fusion.Util           /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc23032_0/ghc_3.hscpp:123:21-24 385        122    0.0    0.0     0.0    0.0
+   sChunks                        Data.Vector.Fusion.Bundle.Monadic /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc23032_0/ghc_7.hscpp:856:30-36 384          1    0.0    0.0     0.0    0.0
+   sSize                          Data.Vector.Fusion.Bundle.Monadic /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc23032_0/ghc_7.hscpp:858:30-34 383          1    0.0    0.0     0.0    0.0
+   upperBound                     Data.Vector.Fusion.Bundle.Size    Data/Vector/Fusion/Bundle/Size.hs:(118,1)-(120,30)                                382          1    0.0    0.0     0.0    0.0
+  wordSize                        Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:44:1-33                                      414          1    0.0    0.0     0.0    0.0
+ CAF                              GHC.Conc.Signal                   <entire-module>                                                                   283          0    0.0    0.1     0.0    0.1
+ CAF                              GHC.IO.Encoding                   <entire-module>                                                                   265          0    0.0    0.3     0.0    0.3
+ CAF                              GHC.IO.Encoding.Iconv             <entire-module>                                                                   263          0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.Handle.FD                  <entire-module>                                                                   254          0    0.0    4.8     0.0    4.8
+ CAF                              GHC.IO.Handle.Internals           <entire-module>                                                                   253          0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.Handle.Text                <entire-module>                                                                   252          0    0.0    0.0     0.0    0.0
+ main                             Main                              c-IOHashTable.hs:(51,1)-(58,12)                                                   375          0    0.0    1.2   100.0   94.0
+  main.(...)                      Main                              c-IOHashTable.hs:54:7-41                                                          410          1    0.0    0.0     0.0    0.0
+  main.cost                       Main                              c-IOHashTable.hs:57:7-92                                                          376          1    0.0    0.7   100.0   91.0
+   minCost                        Main                              c-IOHashTable.hs:(16,1)-(48,48)                                                   377          1    0.0    0.0   100.0   90.2
+    minCost.opt                   Main                              c-IOHashTable.hs:(22,11)-(41,32)                                                  408        649    0.0   41.0   100.0   90.1
+     defaultHashWithSalt          Data.Hashable.Class               /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc18306_0/ghc_5.hscpp:1014:1-50 412       1440    0.0    2.1     0.0    2.1
+     lookup/go                    Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(250,53)-(281,54)                                  417        531    0.0    0.2     0.0    5.3
+      fI                          Data.HashTable.Internal.CacheLine src/Data/HashTable/Internal/CacheLine.hs:78:1-17                                  420       2124    0.0    0.0     0.0    0.0
+      readArray                   Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(94,1)-(96,25)                            421        531    0.0    4.3     0.0    4.3
+      toPtr                       Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(113,1)-(115,46)                          419        531    0.0    0.0     0.0    0.0
+      readArray                   Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:40:1-23                                      506          0    0.0    0.7     0.0    0.7
+       marray#                    Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:162:25-31 507        144    0.0    0.0     0.0    0.0
+     minCost.opt.fontJ            Main                              c-IOHashTable.hs:33:21-39                                                         422        459   50.0    1.7    50.0    1.7
+     checkOverflow                Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(453,1)-(468,20)                                   463        189    0.0    1.1    50.0   29.9
+      growTable                   Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(497,1)-(499,20)                                   466          9    0.0    0.2    50.0   28.3
+       growTable.sz'              Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:498:9-34                                           467          9    0.0    0.0     0.0    0.1
+        bumpSize                  Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:248:1-74                                     468          9    0.0    0.0     0.0    0.1
+         nextBestPrime            Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:(239,1)-(243,38)                             469          9    0.0    0.0     0.0    0.0
+          nextBestPrime.idx       Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:242:5-36                                     470          9    0.0    0.0     0.0    0.0
+           unId                   Data.Vector.Fusion.Util           /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc23032_0/ghc_3.hscpp:123:21-24 471         71    0.0    0.0     0.0    0.0
+           array#                 Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:153:16-21 472         62    0.0    0.0     0.0    0.0
+          nextBestPrime.xi        Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:241:5-18                                     473          9    0.0    0.0     0.0    0.0
+          nextBestPrime.yi        Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:243:5-38                                     474          9    0.0    0.0     0.0    0.0
+           array#                 Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:153:16-21 476          9    0.0    0.0     0.0    0.0
+           unId                   Data.Vector.Fusion.Util           /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc23032_0/ghc_3.hscpp:123:21-24 475          9    0.0    0.0     0.0    0.0
+       rehashAll                  Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(473,1)-(492,28)                                   477          9    0.0    0.1    50.0   28.0
+        newSizedReal              Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(205,1)-(214,34)                                   478          9    0.0    0.1     0.0    2.0
+         newArray                 Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(85,1)-(89,20)                            480          9    0.0    0.3     0.0    0.3
+          newArray.sz             Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:86:9-33                                   481          9    0.0    0.0     0.0    0.0
+         newSizedReal.m'          Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(208,9)-(209,34)                                   479          9    0.0    0.0     0.0    0.0
+         newArray                 Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:37:1-21                                      482          0    0.0    1.6     0.0    1.6
+         newSizeRefs              Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(145,1)-(149,12)                                   483          0    0.0    0.0     0.0    0.0
+        rehashAll.(...)           Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:476:9-64                                           487          9    0.0    0.0     0.0    0.0
+        rehashAll.loadRef'        Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:476:9-64                                           486          9    0.0    0.0     0.0    0.0
+        rehashAll.newHashes       Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:476:9-64                                           495          9    0.0    0.0     0.0    0.0
+        rehashAll.newKeys         Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:476:9-64                                           496          9    0.0    0.0     0.0    0.0
+        rehashAll.newValues       Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:476:9-64                                           497          9    0.0    0.0     0.0    0.0
+        rehashAll.rehash          Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(482,5)-(492,28)                                   488          9    0.0    0.0    50.0   25.8
+         rehashAll.rehash.go      Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(484,9)-(492,28)                                   489        766    0.0    1.1    50.0   25.8
+          growTable/rehash        Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(485,60)-(492,28)                                  490        757    0.0    5.6    50.0   24.7
+           defaultHashWithSalt    Data.Hashable.Class               /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc18306_0/ghc_5.hscpp:1014:1-50 498       1250    0.0    1.8     0.0    1.8
+           readArray              Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(94,1)-(96,25)                            491        757    0.0    6.2     0.0    6.2
+           insertRecord/probe     Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(440,49)-(446,39)                                  499        625   50.0    0.0    50.0    3.7
+            fI                    Data.HashTable.Internal.CacheLine src/Data/HashTable/Internal/CacheLine.hs:78:1-17                                  501       2500    0.0    0.0     0.0    0.0
+            toPtr                 Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(113,1)-(115,46)                          500        625    0.0    0.0     0.0    0.0
+            writeArray            Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(101,1)-(103,30)                          503        625    0.0    0.0     0.0    0.0
+            writeArray            Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:43:1-25                                      504          0    0.0    3.7     0.0    3.7
+             marray#              Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:162:25-31 505       1250    0.0    0.0     0.0    0.0
+           primWordToElem         Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:53:1-21                                   502          0    0.0    0.9     0.0    0.9
+           readArray              Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:40:1-23                                      493          0    0.0    6.5     0.0    6.5
+            marray#               Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:162:25-31 494       1250    0.0    0.0     0.0    0.0
+        readLoad                  Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:133:1-33                                           484          0    0.0    0.0     0.0    0.0
+      readDelLoad                 Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:139:1-36                                           465          0    0.0    0.3     0.0    0.3
+      readLoad                    Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:133:1-33                                           464          0    0.0    0.3     0.0    0.3
+     findSafeSlots                Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(546,1)-(626,48)                                   436        189    0.0    0.3     0.0    3.0
+      findSafeSlots.b0            Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:555:5-26                                           437        189    0.0    0.0     0.0    0.0
+      findSafeSlots.go            Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(567,5)-(626,48)                                   441        189    0.0    0.6     0.0    2.5
+       fI                         Data.HashTable.Internal.CacheLine src/Data/HashTable/Internal/CacheLine.hs:78:1-17                                  444        945    0.0    0.0     0.0    0.0
+       _slot                      Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:504:23-27                                          446        362    0.0    0.0     0.0    0.0
+       readArray                  Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(94,1)-(96,25)                            445        189    0.0    1.5     0.0    1.5
+       toPtr                      Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(113,1)-(115,46)                          443        189    0.0    0.0     0.0    0.0
+       findSafeSlots.go.pl        Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:605:23-50                                          447        173    0.0    0.0     0.0    0.3
+        mappend                   Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(516,5)-(518,55)                                   448        173    0.0    0.0     0.0    0.3
+         mappend.m                Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:517:13-33                                          449        173    0.0    0.3     0.0    0.3
+       findSafeSlots.go.sl        Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:623:33-61                                          512         16    0.0    0.0     0.0    0.0
+        mappend                   Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(516,5)-(518,55)                                   513         16    0.0    0.0     0.0    0.0
+         mappend.m                Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:517:13-33                                          514         16    0.0    0.0     0.0    0.0
+       findSafeSlots.go.wrap'     Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:609:21-47                                          508         16    0.0    0.0     0.0    0.0
+        findSafeSlots.haveWrapped Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(556,5)-(558,48)                                   509         16    0.0    0.0     0.0    0.0
+       readArray                  Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:40:1-23                                      510          0    0.0    0.1     0.0    0.1
+        marray#                   Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:162:25-31 511         16    0.0    0.0     0.0    0.0
+      findSafeSlots.he            Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:554:5-22                                           438        189    0.0    0.0     0.0    0.3
+       primWordToElem             Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:53:1-21                                   439          0    0.0    0.3     0.0    0.3
+     minCost.opt.minCost          Main                              c-IOHashTable.hs:39:23-69                                                         428        189    0.0    0.0     0.0    2.2
+      minCost.customMin           Main                              c-IOHashTable.hs:(43,11)-(48,48)                                                  429        189    0.0    2.2     0.0    2.2
+     readArray                    Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(94,1)-(96,25)                            450        189    0.0    1.5     0.0    1.5
+     writeArray                   Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(101,1)-(103,30)                          459        189    0.0    0.0     0.0    0.0
+     minCost.opt.costJ            Main                              c-IOHashTable.hs:32:21-39                                                         430        157    0.0    0.6     0.0    0.6
+     primWordToElem               Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:53:1-21                                   416          0    0.0    1.1     0.0    1.1
+     readDelLoad                  Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:139:1-36                                           452          0    0.0    0.3     0.0    0.3
+     readLoad                     Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:133:1-33                                           456          0    0.0    0.3     0.0    0.3
+     writeArray                   Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:43:1-25                                      461          0    0.0    1.1     0.0    1.1
+      marray#                     Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:162:25-31 462        378    0.0    0.0     0.0    0.0
+    newSizedReal                  Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(205,1)-(214,34)                                   393          1    0.0    0.0     0.0    0.1
+     newArray                     Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:(85,1)-(89,20)                            398          1    0.0    0.0     0.0    0.0
+      newArray.sz                 Data.HashTable.Internal.IntArray  src/Data/HashTable/Internal/IntArray.hs:86:9-33                                   399          1    0.0    0.0     0.0    0.0
+     newSizedReal.m'              Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(208,9)-(209,34)                                   394          1    0.0    0.0     0.0    0.0
+     newArray                     Data.HashTable.Internal.Array     src/Data/HashTable/Internal/Array.hs:37:1-21                                      403          0    0.0    0.0     0.0    0.0
+     newSizeRefs                  Data.HashTable.ST.Basic           src/Data/HashTable/ST/Basic.hs:(145,1)-(149,12)                                   405          0    0.0    0.0     0.0    0.0
+    nextBestPrime                 Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:(239,1)-(243,38)                             378          1    0.0    0.0     0.0    0.0
+     nextBestPrime.idx            Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:242:5-36                                     379          1    0.0    0.0     0.0    0.0
+      unId                        Data.Vector.Fusion.Util           /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc23032_0/ghc_3.hscpp:123:21-24 380          8    0.0    0.0     0.0    0.0
+      array#                      Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:153:16-21 387          7    0.0    0.0     0.0    0.0
+     nextBestPrime.xi             Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:241:5-18                                     388          1    0.0    0.0     0.0    0.0
+     nextBestPrime.yi             Data.HashTable.Internal.Utils     src/Data/HashTable/Internal/Utils.hs:243:5-38                                     390          1    0.0    0.0     0.0    0.0
+      array#                      Data.Primitive.Array              /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc22624_0/ghc_7.hscpp:153:16-21 392          1    0.0    0.0     0.0    0.0
+      unId                        Data.Vector.Fusion.Util           /var/folders/fv/ct49fxsj14z0rknfclr1mvpm0000gn/T/ghc23032_0/ghc_3.hscpp:123:21-24 391          1    0.0    0.0     0.0    0.0
+  main.costs                      Main                              c-IOHashTable.hs:56:7-35                                                          431          1    0.0    0.0     0.0    0.9
+   readInts                       Main                              c-IOHashTable.hs:(11,1)-(13,81)                                                   432          1    0.0    0.3     0.0    0.9
+    readInts.(...)                Main                              c-IOHashTable.hs:13:52-80                                                         435         20    0.0    0.2     0.0    0.2
+    readInts.int                  Main                              c-IOHashTable.hs:13:52-80                                                         434         20    0.0    0.0     0.0    0.0
+    readInts.list                 Main                              c-IOHashTable.hs:12:7-29                                                          433          1    0.0    0.4     0.0    0.4
+  main.fonts                      Main                              c-IOHashTable.hs:55:7-35                                                          423          1    0.0    0.0     0.0    0.9
+   readInts                       Main                              c-IOHashTable.hs:(11,1)-(13,81)                                                   424          1    0.0    0.3     0.0    0.9
+    readInts.(...)                Main                              c-IOHashTable.hs:13:52-80                                                         427         20    0.0    0.2     0.0    0.2
+    readInts.int                  Main                              c-IOHashTable.hs:13:52-80                                                         426         20    0.0    0.0     0.0    0.0
+    readInts.list                 Main                              c-IOHashTable.hs:12:7-29                                                          425          1    0.0    0.4     0.0    0.4
+  main.lines                      Main                              c-IOHashTable.hs:53:7-43                                                          411          1    0.0    0.1     0.0    0.1
+  main.n                          Main                              c-IOHashTable.hs:54:7-41                                                          409          1    0.0    0.0     0.0    0.0
