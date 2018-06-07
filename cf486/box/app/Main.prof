@@ -1,0 +1,43 @@
+	Mon Jun  4 18:58 2018 Time and Allocation Profiling Report  (Final)
+
+	   Main +RTS -p -RTS
+
+	total time  =       63.64 secs   (63644 ticks @ 1000 us, 1 processor)
+	total alloc = 32,027,714,200 bytes  (excludes profiling overheads)
+
+COST CENTRE         MODULE    SRC                     %time %alloc
+
+validPairs.isMember Main      Main.hs:33:9-41          72.0    0.0
+validPairs          Main      Main.hs:(28,1)-(33,41)   27.9   99.9
+
+
+                                                                                          individual      inherited
+COST CENTRE               MODULE                SRC                    no.     entries  %time %alloc   %time %alloc
+
+MAIN                      MAIN                  <built-in>             133          0    0.0    0.0   100.0  100.0
+ CAF                      Main                  <entire-module>        265          0    0.0    0.0     0.0    0.0
+  input                   Main                  Main.hs:(14,1)-(16,24) 268          1    0.0    0.0     0.0    0.0
+  main                    Main                  Main.hs:(38,1)-(61,19) 266          1    0.0    0.0     0.0    0.0
+  powersOf2               Main                  Main.hs:25:1-73        282          1    0.0    0.0     0.0    0.0
+  readInts                Main                  Main.hs:(19,1)-(20,51) 274          1    0.0    0.0     0.0    0.0
+ CAF                      GHC.Conc.Signal       <entire-module>        228          0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding       <entire-module>        210          0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding.Iconv <entire-module>        208          0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.FD             <entire-module>        201          0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.FD      <entire-module>        199          0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.Text    <entire-module>        197          0    0.0    0.0     0.0    0.0
+ main                     Main                  Main.hs:(38,1)-(61,19) 267          0    0.0    0.0   100.0  100.0
+  main.\                  Main                  Main.hs:55:34-55       284          3    0.0    0.0     0.0    0.0
+  main.(...)              Main                  Main.hs:40:7-30        277          1    0.0    0.0     0.0    0.0
+  main.cliques2           Main                  Main.hs:44:7-30        270          1    0.0    0.0   100.0   99.9
+   validPairs             Main                  Main.hs:(28,1)-(33,41) 271          1   27.9   99.9   100.0   99.9
+    validPairs.isMember   Main                  Main.hs:33:9-41        278  400000000   72.0    0.0    72.0    0.0
+  main.cliques3           Main                  Main.hs:(47,7)-(52,30) 283          1    0.0    0.0     0.0    0.0
+  main.xs                 Main                  Main.hs:43:7-31        272          1    0.0    0.0     0.0    0.0
+  main.xs'                Main                  Main.hs:42:7-24        273          1    0.0    0.0     0.0    0.0
+   readInts               Main                  Main.hs:(19,1)-(20,51) 275          0    0.0    0.0     0.0    0.0
+    readInts.parse        Main                  Main.hs:20:9-51        279      20000    0.0    0.0     0.0    0.0
+     readInts.parse.(...) Main                  Main.hs:20:23-46       281      20000    0.0    0.0     0.0    0.0
+     readInts.parse.x     Main                  Main.hs:20:23-46       280      20000    0.0    0.0     0.0    0.0
+  main.xsl                Main                  Main.hs:40:7-30        276          1    0.0    0.0     0.0    0.0
+  input                   Main                  Main.hs:(14,1)-(16,24) 269          0    0.0    0.0     0.0    0.0

@@ -1,0 +1,86 @@
+	Sun Jun  3 23:12 2018 Time and Allocation Profiling Report  (Final)
+
+	   d +RTS -p -RTS
+
+	total time  =        0.00 secs   (1 ticks @ 1000 us, 1 processor)
+	total alloc =     646,056 bytes  (excludes profiling overheads)
+
+COST CENTRE                          MODULE           SRC                     %time %alloc
+
+fromEdges                            Main             d.hs:(55,1)-(62,22)     100.0    1.5
+CAF                                  GHC.IO.Handle.FD <entire-module>           0.0    5.4
+main                                 Main             d.hs:(133,1)-(142,54)     0.0    6.7
+fromEdges.\                          Main             d.hs:(58,32)-(61,26)      0.0    2.9
+addEdge                              Main             d.hs:(50,1)-(52,39)       0.0   23.7
+maximalCliques.bk                    Main             d.hs:(98,9)-(112,31)      0.0    4.2
+maximalCliques.bk.(...)              Main             d.hs:(101,13)-(111,46)    0.0    2.8
+maximalCliques.bk.(...).\            Main             d.hs:(101,56)-(110,63)    0.0    6.4
+maximalCliques.bk.(...).\.newState   Main             d.hs:(107,37)-(109,73)    0.0    3.4
+maximalCliques.bk.(...).\.recur      Main             d.hs:(104,37)-(106,90)    0.0   13.7
+maximalCliques.bk.(...).\.neighbours Main             d.hs:103:37-73            0.0    7.7
+validPairs                           Main             d.hs:(122,1)-(130,15)     0.0   14.6
+
+
+                                                                                                             individual      inherited
+COST CENTRE                                  MODULE                SRC                    no.     entries  %time %alloc   %time %alloc
+
+MAIN                                         MAIN                  <built-in>             138          0    0.0    0.1   100.0  100.0
+ CAF                                         Main                  <entire-module>        275          0    0.0    0.0     0.0    1.0
+  main                                       Main                  d.hs:(133,1)-(142,54)  276          1    0.0    0.1     0.0    0.1
+  maximumClique                              Main                  d.hs:115:1-88          299          1    0.0    0.0     0.0    0.0
+  powersOf2                                  Main                  d.hs:119:1-59          312          1    0.0    0.8     0.0    0.8
+ CAF                                         GHC.Conc.Signal       <entire-module>        235          0    0.0    0.1     0.0    0.1
+ CAF                                         GHC.IO.Encoding       <entire-module>        217          0    0.0    0.5     0.0    0.5
+ CAF                                         GHC.IO.Encoding.Iconv <entire-module>        215          0    0.0    0.0     0.0    0.0
+ CAF                                         GHC.IO.FD             <entire-module>        208          0    0.0    0.0     0.0    0.0
+ CAF                                         GHC.IO.Handle.FD      <entire-module>        206          0    0.0    5.4     0.0    5.4
+ CAF                                         GHC.IO.Handle.Text    <entire-module>        204          0    0.0    0.0     0.0    0.0
+ main                                        Main                  d.hs:(133,1)-(142,54)  277          0    0.0    6.6   100.0   92.9
+  main.\                                     Main                  d.hs:142:24-53         327          3    0.0    0.6     0.0    0.6
+  main.(...)                                 Main                  d.hs:136:7-31          284          1    0.0    0.0     0.0    0.1
+   readInts                                  Main                  d.hs:(27,1)-(32,21)    285          1    0.0    0.0     0.0    0.1
+    readInts.(...)                           Main                  d.hs:(28,3)-(31,30)    287          1    0.0    0.0     0.0    0.1
+     readInts.(...).\                        Main                  d.hs:(28,36)-(30,36)   288          1    0.0    0.0     0.0    0.0
+      readInts.(...).\.(...)                 Main                  d.hs:29:24-75          290          1    0.0    0.0     0.0    0.0
+      readInts.(...).\.bs'                   Main                  d.hs:29:24-75          296          1    0.0    0.0     0.0    0.0
+      readInts.(...).\.x                     Main                  d.hs:29:24-75          289          1    0.0    0.0     0.0    0.0
+    readInts.bs'                             Main                  d.hs:(28,3)-(31,30)    295          1    0.0    0.0     0.0    0.0
+    readInts.xs                              Main                  d.hs:(28,3)-(31,30)    286          1    0.0    0.0     0.0    0.0
+  main.(...)                                 Main                  d.hs:137:7-29          279          1    0.0    0.0     0.0    2.3
+   readInts                                  Main                  d.hs:(27,1)-(32,21)    280          1    0.0    0.1     0.0    2.3
+    readInts.(...)                           Main                  d.hs:(28,3)-(31,30)    282          1    0.0    0.6     0.0    2.2
+     readInts.(...).\                        Main                  d.hs:(28,36)-(30,36)   291         32    0.0    0.6     0.0    1.5
+      readInts.(...).\.(...)                 Main                  d.hs:29:24-75          293         32    0.0    1.0     0.0    1.0
+      readInts.(...).\.x                     Main                  d.hs:29:24-75          292         32    0.0    0.0     0.0    0.0
+      readInts.(...).\.bs'                   Main                  d.hs:29:24-75          297         31    0.0    0.0     0.0    0.0
+    readInts.xs                              Main                  d.hs:(28,3)-(31,30)    281          1    0.0    0.0     0.0    0.0
+  main.bs'                                   Main                  d.hs:136:7-31          294          1    0.0    0.0     0.0    0.0
+  main.graph                                 Main                  d.hs:139:7-31          306          1    0.0    0.0   100.0   28.1
+   fromEdges                                 Main                  d.hs:(55,1)-(62,22)    307          1  100.0    1.5   100.0   28.1
+    fromEdges.\                              Main                  d.hs:(58,32)-(61,26)   313         61    0.0    2.9     0.0   26.6
+     addEdge                                 Main                  d.hs:(50,1)-(52,39)    314        122    0.0   23.7     0.0   23.7
+  main.indexes                               Main                  d.hs:140:7-46          298          1    0.0    0.0     0.0   39.5
+   maximumClique                             Main                  d.hs:115:1-88          300          0    0.0    0.2     0.0   39.5
+    maximumClique.\                          Main                  d.hs:115:40-70         325         29    0.0    0.4     0.0    0.4
+    maximalCliques                           Main                  d.hs:(95,1)-(112,31)   301          1    0.0    0.4     0.0   38.9
+     maximalCliques.bk                       Main                  d.hs:(98,9)-(112,31)   302        124    0.0    4.2     0.0   38.1
+      maximalCliques.bk.(...)                Main                  d.hs:(101,13)-(111,46) 317         94    0.0    2.8     0.0   34.0
+       maximalCliques.bk.(...).\             Main                  d.hs:(101,56)-(110,63) 318        123    0.0    6.4     0.0   31.2
+        maximalCliques.bk.(...).\.(...)      Main                  d.hs:102:37-71         321        123    0.0    0.0     0.0    0.0
+        maximalCliques.bk.(...).\.neighbours Main                  d.hs:103:37-73         323        123    0.0    7.7     0.0    7.7
+        maximalCliques.bk.(...).\.p          Main                  d.hs:102:37-71         320        123    0.0    0.0     0.0    0.0
+        maximalCliques.bk.(...).\.recur      Main                  d.hs:(104,37)-(106,90) 319        123    0.0   13.7     0.0   13.7
+        maximalCliques.bk.(...).\.x          Main                  d.hs:102:37-71         324        123    0.0    0.0     0.0    0.0
+        maximalCliques.bk.(...).\.newState   Main                  d.hs:(107,37)-(109,73) 322         61    0.0    3.4     0.0    3.4
+        maximalCliques.bk.(...).\.r          Main                  d.hs:102:37-71         326         61    0.0    0.0     0.0    0.0
+      maximalCliques.bk.cliques              Main                  d.hs:(101,13)-(111,46) 316         94    0.0    0.0     0.0    0.0
+     bkStateInit                             Main                  d.hs:(88,1)-(92,3)     303          1    0.0    0.4     0.0    0.4
+     maximalCliques.(...)                    Main                  d.hs:96:3-30           305          1    0.0    0.0     0.0    0.0
+     maximalCliques.end                      Main                  d.hs:96:3-30           315          1    0.0    0.0     0.0    0.0
+     maximalCliques.start                    Main                  d.hs:96:3-30           304          1    0.0    0.0     0.0    0.0
+  main.n                                     Main                  d.hs:136:7-31          283          1    0.0    0.0     0.0    0.0
+  main.valid                                 Main                  d.hs:138:7-27          308          1    0.0    0.0     0.0   15.7
+   validPairs                                Main                  d.hs:(122,1)-(130,15)  309          1    0.0   14.6     0.0   15.7
+    validPairs.p2Set                         Main                  d.hs:123:3-30          311          1    0.0    0.3     0.0    0.3
+    validPairs.xsI                           Main                  d.hs:124:3-20          310          1    0.0    0.8     0.0    0.8
+  main.xs                                    Main                  d.hs:137:7-29          278          1    0.0    0.0     0.0    0.0
